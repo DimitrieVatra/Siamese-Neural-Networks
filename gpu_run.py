@@ -29,9 +29,7 @@ def main(hparams):
     # 2 INIT TRAINER
     # ------------------------
     trainer = Trainer(
-        gpus=hparams.gpus,
-        distributed_backend=hparams.distributed_backend,
-        use_amp=hparams.use_16bit
+        gpus=hparams.gpus
     )
 
     # ------------------------

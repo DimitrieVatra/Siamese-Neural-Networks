@@ -29,7 +29,8 @@ class Model(LightningModule):
         """
         # init superclass
         super(Model, self).__init__()
-        self.hparams = hparams
+        print(hparams)
+        self.save_hyperparameters(hparams)
 
         self.batch_size = hparams.batch_size
 
@@ -94,7 +95,7 @@ class Model(LightningModule):
         loss_val = self.loss(pred.squeeze(1), same)
 
         # in DP mode (default) make sure if result is scalar, there's another dim in the beginning
-        if self.trainer.use_dp or self.trainer.use_ddp2:
+        if self.use_dp_or_ddp2():
             loss_val = loss_val.unsqueeze(0)
 
         tqdm_dict = {'train_loss': loss_val}
@@ -134,7 +135,7 @@ class Model(LightningModule):
             val_acc = val_acc.cuda(0)
 
         # in DP mode (default) make sure if result is scalar, there's another dim in the beginning
-        if self.trainer.use_dp or self.trainer.use_ddp2:
+        if self.use_dp_or_ddp2():
             val_acc = val_acc.unsqueeze(0)
 
         output = OrderedDict({
@@ -156,7 +157,7 @@ class Model(LightningModule):
 
             # reduce manually when using dp
             val_acc = output['val_acc']
-            if self.trainer.use_dp or self.trainer.use_ddp2:
+            if self.use_dp_or_ddp2():
                 val_acc = torch.mean(val_acc)
 
             val_acc_mean += val_acc
@@ -195,8 +196,8 @@ class Model(LightningModule):
         train_sampler = None
         batch_size = self.hparams.batch_size
 
-        if self.use_ddp:
-            train_sampler = DistributedSampler(dataset)
+        #if self.use_dp:
+        #train_sampler = DistributedSampler(dataset)
 
         should_shuffle = train_sampler is None
         loader = DataLoader(
@@ -210,20 +211,23 @@ class Model(LightningModule):
 
         return loader
 
-    @pl.data_loader
+    #@pl.data_loader
     def train_dataloader(self):
         logging.info('training data loader called')
         return self.__dataloader(train=True)
 
-    @pl.data_loader
+    #@pl.data_loader
     def val_dataloader(self):
         logging.info('val data loader called')
         return self.__dataloader(train=False)
 
-    @pl.data_loader
+    #@pl.data_loader
     def test_dataloader(self):
         logging.info('test data loader called')
         return self.__dataloader(train=False)
+    
+    def use_dp_or_ddp2(self):
+        return True#self.trainer.use_dp or self.trainer.use_ddp2
 
     @staticmethod
     def add_model_specific_args(parent_parser, root_dir):  # pragma: no cover

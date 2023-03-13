@@ -130,8 +130,8 @@ class MNIST(VisionDataset):
         if self._check_exists():
             return
 
-        makedir_exist_ok(self.raw_folder)
-        makedir_exist_ok(self.processed_folder)
+        self.makedir_exist_ok(self.raw_folder)
+        self.makedir_exist_ok(self.processed_folder)
 
         # download files
         for url, md5 in self.resources:
@@ -158,3 +158,7 @@ class MNIST(VisionDataset):
 
     def extra_repr(self):
         return "Split: {}".format("Train" if self.train is True else "Test")
+    
+    def makedir_exist_ok(self, path):
+        if not os.path.exists(path):
+            os.makedirs(path)
