@@ -55,6 +55,12 @@ if __name__ == '__main__':
         help='how many gpus'
     )
     parent_parser.add_argument(
+        '--num_workers',
+        type=int,
+        default=24,
+        help='how many processors'
+    )
+    parent_parser.add_argument(
         '--distributed_backend',
         type=str,
         default='dp',

@@ -1,0 +1,12 @@
+batch_size: 128
+data_root: C:\Users\vatra\source\repos\Master Thesis\Preparation\Existing repositories\Siamese-Neural-Networks\mnist
+distributed_backend: dp
+drop_prob: 0.2
+gpus: 1
+hidden_dim: 2048
+in_features: 784
+learning_rate: 0.001
+num_workers: 24
+optimizer_name: adam
+out_features: 4096
+use_16bit: false
