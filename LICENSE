@@ -1,6 +1,5 @@
 Purpose Source License 1.0
-
-Version 1.0
+https://purposesource.org
 
 Summary
 
@@ -8,12 +7,12 @@ This summary is not part of the licence terms; the terms below govern.
 
 This software works like open source, except that large commercial
 organizations need to support charity to use it. Anyone may use, change and
-share it under this licence. It is free forever for personal use, for smaller
-organizations, and for non-profits, public schools and universities, and
-public bodies in their own work. Purpose Source's goal is to extend the
-benefit of the maintainers' and contributors' work beyond the code itself.
-Authors keep their copyright, maintainers keep control, and both maintainers
-and contributors can help choose the charities their work supports.
+share it under this licence. It is free forever for personal use, smaller
+organizations, non-profits, public schools, universities and public bodies in
+their own work. Purpose Source's goal is to extend the benefit of the
+maintainers' and contributors' work beyond the code itself. Authors keep their
+copyright, maintainers keep control, and both maintainers and contributors can
+help choose the charities their work supports.
 
 The Purpose Source Association handles the fees, the contracts with buyers and
 the licence itself, so maintainers never have to deal with payments or buyer
@@ -21,11 +20,11 @@ contracts. It publishes every amount it passes on, and it recognizes their
 contribution with certificates to share on CVs, portfolios and professional
 profiles.
 
-Large organizations do this at purposesource.org, through a published fee for
-this project or one annual Pass covering all software under this licence. The
-Association forwards 100% of the net proceeds to the listed charities after
-published, capped costs. Maintainers can also exempt any organizations they
-choose from paying, by granting them free waivers for as long as they choose.
+Large organizations do this through a published fee for this project or one
+annual Pass covering all software under this licence. The Association forwards
+100% of the net proceeds to the listed charities after published, capped
+costs. Maintainers can also exempt any organizations they choose from paying,
+by granting them free waivers for as long as they choose.
 
 "Large" means a group with at least 100 people, or at least USD 1 million in
 revenue in its last completed year. Even large organizations can evaluate it,
@@ -43,12 +42,10 @@ share this software, keep this licence and the notices that came with it.
 
 These lines are part of the licence text, identical in every copy:
 
-SPDX identifier:         PurposeSource-1.0, or LicenseRef-PurposeSource-1.0
-                         while it is not on the SPDX License List
-Steward:                 Purpose Source Association (the Association)
-Seat:                    Aarau, Switzerland
-Registry:                https://purposesource.org/registry
-Canonical text:          https://purposesource.org/license/PurposeSource-1.0.txt
+Steward:         Purpose Source Association (the Association)
+Seat:            Aarau, Switzerland
+Registry:        https://purposesource.org/registry
+Canonical text:  https://purposesource.org/license/PurposeSource-1.0.txt
 
 2. Words used here
 
